@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Practice Bud</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles/main.css"/>
+
+    <!-- VENDOR COMPONENTS -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- APP FILES -->
+    <script src="shared/scripts/app.js"></script>
+</head>
+<body id="ng-app" ng-app="pBud">
+
+<!--[if lt IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!--<div class="navigation-header" ng-include src="'modules/navigation/views/navbar.html'"></div>-->
+<div class="mainContent" ui-view></div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "Practice Bud",
+  "description": "to very well learn more angular",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-material": "~0.10.0",
+    "angular-ui-router": "~0.2.15"
+  }
+}
