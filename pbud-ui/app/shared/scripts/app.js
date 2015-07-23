@@ -2,7 +2,7 @@
 (function() {
 
     angular
-        .module('pBud', [ 'ui.router', 'ngMaterial' ])
+        .module('pBud', [ 'ui.router', 'pBud.home' ])
         .config(routeConfig)
         .run(appRun);
 
@@ -14,6 +14,8 @@
         $stateProvider
             .state('home', {
                 url: '/home',
+                controller: 'HomeController',
+                controllerAs: 'homeCtrl',
                 templateUrl: 'modules/home/views/home.html'
             })
             .state('practice', {

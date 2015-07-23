@@ -6,7 +6,13 @@
   "private": true,
   "dependencies": {
     "angular": "~1.4.3",
-    "angular-material": "~0.10.0",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "bootstrap-sass-official": "~3.3.5",
+    "angular-bootstrap": "~0.13.1",
+    "jquery": "~2.1.4"
+  },
+  "resolutions": {
+    "bootstrap-sass-official": "~3.3.5",
+    "angular-bootstrap": "~0.13.1"
   }
 }

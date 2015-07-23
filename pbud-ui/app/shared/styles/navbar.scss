@@ -1,6 +1,24 @@
-#navigationBar {
-  #headerTitle {
-    margin-right: 30px;
-    font-weight: bold;
-  }
+.navbar {
+  margin-bottom: 0px;
+  border: 0;
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 30px;
+  color: #FFFFFF;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #e5e5e5;
+}
+
+.navbar .container {
+  width: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 100%;
+}
+
+.navbar-nav .navbar-right {
+  margin-right: 50px;
 }

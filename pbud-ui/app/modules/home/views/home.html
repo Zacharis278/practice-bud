@@ -1,3 +1,22 @@
 <div id="homeContent">
-    <p>Hello World</p>
+    <div id="bannerContent">
+
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th ng-repeat="header in homeCtrl.gridHeaders" ng-click="homeCtrl.sortRows($index)"> {{ header }} <span class="sortIcon"></span> </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in homeCtrl.gridItems" ng-click="homeCtrl.openItem(item.artist, item.title)">
+            <td>{{ item.title }}</td>
+            <td>{{ item.artist }}</td>
+            <td>{{ item.progress }}</td>
+            <td>{{ item.lastPlayed | date:'MM/dd/yyyy' }}</td>
+            <td>{{ item.playCount }}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>

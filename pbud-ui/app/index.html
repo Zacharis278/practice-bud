@@ -19,13 +19,14 @@
 <!-- VENDOR COMPONENTS -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/angular-material/angular-material.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-aria/angular-aria.js"></script>
 
 <!-- APP FILES -->
 <script src="shared/scripts/app.js"></script>
 
+<script src="modules/home/scripts/homeConfig.js"></script>
+<script src="modules/home/scripts/homeController.js"></script>
+
+<!-- APP VIEW -->
 <div ng-include src="'shared/views/navbar.html'"></div>
 <div class="mainContent" ui-view></div>
 
