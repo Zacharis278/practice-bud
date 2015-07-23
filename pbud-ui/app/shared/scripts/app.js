@@ -2,8 +2,9 @@
 (function() {
 
     angular
-        .module('pBud', [ 'ui.router' ])
-        .config(routeConfig);
+        .module('pBud', [ 'ui.router', 'ngMaterial' ])
+        .config(routeConfig)
+        .run(appRun);
 
     routeConfig.$inject = [ '$stateProvider', '$urlRouterProvider' ];
 
@@ -13,7 +14,7 @@
         $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: 'shared/views/home.html'
+                templateUrl: 'modules/home/views/home.html'
             })
             .state('practice', {
                 url: '/practice',
@@ -23,4 +24,7 @@
         $urlRouterProvider.otherwise('/home');
     }
 
+    function appRun() {
+        console.log('and go?');
+    }
 }());
