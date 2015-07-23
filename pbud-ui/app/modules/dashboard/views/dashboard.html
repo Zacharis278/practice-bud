@@ -6,11 +6,11 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <th ng-repeat="header in homeCtrl.gridHeaders" ng-click="homeCtrl.sortRows($index)"> {{ header }} <span class="sortIcon"></span> </th>
+            <th ng-repeat="header in dashboardCtrl.gridHeaders" ng-click="dashboardCtrl.sortRows($index)"> {{ header }} <span class="sortIcon"></span> </th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="item in homeCtrl.gridItems" ng-click="homeCtrl.openItem(item.artist, item.title)">
+        <tr ng-repeat="item in dashboardCtrl.gridItems" ng-click="dashboardCtrl.openItem(item.artist, item.title)">
             <td>{{ item.title }}</td>
             <td>{{ item.artist }}</td>
             <td>{{ item.progress }}</td>

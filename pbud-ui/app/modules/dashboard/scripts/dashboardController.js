@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-        .module('pBud.home')
-        .controller('HomeController', Dashboard);
+        .module('pBud.dashboard')
+        .controller('dashboardController', Dashboard);
 
     Dashboard.$inject = ['$filter', '$location', '$state'];
 

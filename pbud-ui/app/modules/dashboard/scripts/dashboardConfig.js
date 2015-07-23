@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('pBud.home', [
+        .module('pBud.dashboard', [
 
         ]);
 }());

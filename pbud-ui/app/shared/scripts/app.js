@@ -2,7 +2,7 @@
 (function() {
 
     angular
-        .module('pBud', [ 'ui.router', 'pBud.home' ])
+        .module('pBud', [ 'ui.router', 'pBud.dashboard' ])
         .config(routeConfig)
         .run(appRun);
 
@@ -14,9 +14,9 @@
         $stateProvider
             .state('home', {
                 url: '/home',
-                controller: 'HomeController',
-                controllerAs: 'homeCtrl',
-                templateUrl: 'modules/home/views/home.html'
+                controller: 'dashboardController',
+                controllerAs: 'dashboardCtrl',
+                templateUrl: 'modules/dashboard/views/dashboard.html'
             })
             .state('practice', {
                 url: '/practice',
