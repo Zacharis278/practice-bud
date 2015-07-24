@@ -6059,6 +6059,12 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+html body {
+  height: 100%; }
+
+.mainContent {
+  height: calc(100% - 50px); }
+
 .navbar {
   margin-bottom: 0px;
   border: 0; }
@@ -6083,3 +6089,30 @@ button.close {
 #homeContent #bannerContent {
   height: 150px;
   background-color: #7fd999; }
+
+#practiceContainer {
+  height: 100%; }
+  #practiceContainer .tabPanel {
+    float: left;
+    height: 100%;
+    width: 60%;
+    padding: 10px;
+    margin: 0;
+    font-size: 12px;
+    border: none;
+    background-color: white; }
+  #practiceContainer .lyricPanel {
+    float: right;
+    height: 100%;
+    width: 40%;
+    padding: 30px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background-color: #e5e5e5; }
+  #practiceContainer .mediaPanel {
+    position: fixed;
+    height: 366px;
+    width: 100%;
+    bottom: 0;
+    background-color: #7fd999; }

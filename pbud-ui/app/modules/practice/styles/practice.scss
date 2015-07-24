@@ -1,0 +1,37 @@
+#practiceContainer {
+  height: 100%;
+  
+  .tabPanel {
+    float: left;
+    height: 100%;
+    width: 60%;
+    padding: 10px;
+    margin: 0;
+
+    font-size: 12px;
+
+    border: none;
+    background-color: white;
+  }
+
+  .lyricPanel {
+    float: right;
+    height: 100%;
+    width: 40%;
+    padding: 30px;
+    margin: 0;
+
+    border: none;
+    border-radius: 0;
+    background-color: #e5e5e5;
+  }
+
+  .mediaPanel {
+    position: fixed;
+    height: 366px;
+    width: 100%;
+    bottom: 0;
+
+    background-color: #7fd999;
+  }
+}

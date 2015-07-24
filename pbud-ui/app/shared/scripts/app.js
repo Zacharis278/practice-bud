@@ -2,7 +2,7 @@
 (function() {
 
     angular
-        .module('pBud', [ 'ui.router', 'pBud.dashboard' ])
+        .module('pBud', [ 'ui.router', 'pBud.dashboard', 'pBud.practice' ])
         .config(routeConfig)
         .run(appRun);
 
@@ -20,6 +20,8 @@
             })
             .state('practice', {
                 url: '/practice',
+                controller: 'practiceController',
+                controllerAs: 'practiceCtrl',
                 templateUrl: 'modules/practice/views/practice.html',
                 inherit: true
             });
