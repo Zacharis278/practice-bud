@@ -60,10 +60,7 @@
 
         function openItem(artist, title) {
 
-            //// is this OK to use over $state.go??
-            //$location.path('/practice')
-            //    .search('artist', artist.replace(/\s/g, "_"))
-            //    .search('title', title.replace(/\s/g, "_"));
+            $state.go('practice');
 
         }
     }

@@ -1,7 +1,7 @@
-<div class="mediaPanel">
+<div id="mediaBar">
 
     <div id="yt-player" style="z-index: -999"></div>
 
-    <span id="playPauseBtn" class="glyphicon glyphicon-play" ng-click=""></span>
+    <span id="playPauseBtn" class="controlBtn glyphicon" ng-click="vm.playPause()" ng-class="vm.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span>
 
 </div>

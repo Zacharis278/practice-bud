@@ -25,13 +25,27 @@
     border-radius: 0;
     background-color: #e5e5e5;
   }
+}
 
-  .mediaPanel {
-    position: fixed;
-    height: 366px;
-    width: 100%;
-    bottom: 0;
+#mediaBar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 
-    background-color: #7fd999;
+  background-color: #7fd999;
+
+  .controlBtn {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  #playPauseBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
