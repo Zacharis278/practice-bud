@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+var practiceItemSchema = require('models/practiceItem');
+
 var practiceItems = require('./routes/practiceItems');
 
 var app = express();
@@ -17,8 +20,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API ROUTES
+/*
+ * Database connection and Schemas
+ */
+
+var Show = mongoose.model('PracticeItem', practiceItemSchema);
+mongoose.connect('localhost');
+
+/*
+ * API ROUTES
+ */
 app.use('/api/v1/', practiceItems);
+
+/*
+ * Error handling/logging
+ */
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

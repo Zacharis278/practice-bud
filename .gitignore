@@ -1,3 +1,6 @@
+# ignore compiled CSS
+pbud-ui/styles
+
 # ignore node modules
 pbud-ui/node_modules/
 
