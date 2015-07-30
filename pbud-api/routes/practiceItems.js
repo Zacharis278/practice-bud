@@ -5,9 +5,13 @@ var PracticeItem = require('../models/practiceItem');
 
 /* GET list of practice items meta data */
 router.get('/practiceItems', function(req, res, next) {
-    var query = PracticeItem.find();
+    // exclude actual tab/lyric/media data, just send back meta data
+    var query = PracticeItem.find({}, {
+        mediaId: 0,
+        tabData: 0,
+        lyricData: 0
+    });
 
-    // just list all
     query.exec(function(err, item) {
         if(err) return next(err);
         res.send(item);
@@ -16,7 +20,13 @@ router.get('/practiceItems', function(req, res, next) {
 
 /* GET practice item by id */
 router.get('/practiceItems/:itemId', function(req, res, next) {
-    res.send('respond with an item');
+
+    var query = PracticeItem.find({ _id: { $eq: req.params.itemId }});
+
+    query.exec(function(err, item) {
+        if(err) return next(err);
+        res.send(item);
+    });
 });
 
 /* POST new practice item */
