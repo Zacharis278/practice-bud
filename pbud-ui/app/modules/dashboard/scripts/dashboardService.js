@@ -11,8 +11,7 @@
 
         // Public API
         var service = {
-            getGridItems: getGridItems,
-            getGridHeaders: getGridHeaders
+            getGridItems: getGridItems
         };
 
         // private
@@ -32,22 +31,12 @@
             }
         }
 
-        function getGridHeaders() {
-            if(gridColumns) {
-                return $q.when(gridColumns);
-            } else {
-                return fetchGridData().then(function() {
-                    return gridColumns;
-                });
-            }
-        }
-
         function fetchGridData() {
             var deferred = $q.defer();
 
-            $http.get('/api/v1/practiceItems').then(function(data) {
-                gridItems = data.gridItems;
-                gridColumns = data.gridColumns;
+            $http.get('/practiceBud/api/v1/practiceItems').then(function(res) {
+                gridItems = res.data;
+
                 deferred.resolve();
             }, function(err) {
                 $log.error('shits wrong yo: ' + err);

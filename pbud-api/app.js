@@ -40,7 +40,7 @@ mongoose.connect('localhost/pbud');
 /*
  * API ROUTES
  */
-app.use('/api/v1/', practiceItems);
+app.use('/practiceBud/api/v1/', practiceItems);
 
 /*
  * Error handling/logging

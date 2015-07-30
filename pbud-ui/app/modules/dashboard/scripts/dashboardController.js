@@ -5,14 +5,16 @@
         .module('pBud.dashboard')
         .controller('dashboardController', Dashboard);
 
-    Dashboard.$inject = ['$filter', '$location', '$state'];
+    Dashboard.$inject = ['$filter', '$state', 'dashboardService'];
 
-    function Dashboard($filter, $location, $state) {
+    function Dashboard($filter, $state, dashboardService) {
 
         // public view model
         var vm = this;
         vm.sortRows = sortRows;
         vm.openItem = openItem;
+
+        vm.gridItems = [];
 
         vm.gridHeaders = [
             'title',
@@ -22,34 +24,20 @@
             'playCount'
         ];
 
-        vm.gridItems = [
-            {
-                "id": 1,
-                "title": "Imagine",
-                "artist": "A Perfect Circle",
-                "progress": 75,
-                "lastPlayed": 1288323623006,
-                "playCount": "14"
-            },
-            {
-                "id": 2,
-                "title": "Little Talks",
-                "artist": "Of Monsters and Men",
-                "progress": 75,
-                "lastPlayed": 1288323623006,
-                "playCount": "34"
-            }
-        ];
+        init();
 
         // private members
         var sortKey = 'title';
         var sortReverse = false;
 
-        // populate data grid
-        //gridService.fetchGridData();
-
 
         // definitions
+        function init() {
+            dashboardService.getGridItems().then(function(gridList){
+                vm.gridItems = gridList;
+                console.log(gridList);
+            });
+        }
 
         function sortRows(index) {
             var predicate = vm.gridHeaders[index];

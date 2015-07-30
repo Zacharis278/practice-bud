@@ -12,9 +12,9 @@ router.get('/practiceItems', function(req, res, next) {
         lyricData: 0
     });
 
-    query.exec(function(err, item) {
+    query.exec(function(err, items) {
         if(err) return next(err);
-        res.send(item);
+        res.status(200).json(items);
     });
 });
 
@@ -23,9 +23,9 @@ router.get('/practiceItems/:itemId', function(req, res, next) {
 
     var query = PracticeItem.find({ _id: { $eq: req.params.itemId }});
 
-    query.exec(function(err, item) {
+    query.exec(function(err, items) {
         if(err) return next(err);
-        res.send(item);
+        res.status(200).json(items[0]);
     });
 });
 
@@ -53,7 +53,7 @@ router.post('/practiceItems', function (req, res, next) {
         }
 
         // echo back on success for now
-        res.send(200, practiceItem);
+        res.status(200).json(practiceItem);
     })
 });
 
