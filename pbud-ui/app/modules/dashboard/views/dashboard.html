@@ -10,7 +10,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="item in dashboardCtrl.gridItems" ng-click="dashboardCtrl.openItem(item.artist, item.title)">
+        <tr ng-repeat="item in dashboardCtrl.gridItems" ng-click="dashboardCtrl.openItem(item._id)">
             <td>{{ item.title }}</td>
             <td>{{ item.artist }}</td>
             <td>{{ item.progress }}</td>

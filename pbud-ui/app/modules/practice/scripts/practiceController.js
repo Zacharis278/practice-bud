@@ -5,28 +5,25 @@
         .module('pBud.practice')
         .controller('practiceController', Practice);
 
-    Practice.$inject = ['$location', '$state'];
+    Practice.$inject = ['$stateParams', 'practiceService'];
 
-    function Practice($location, $state) {
+    function Practice($stateParams, practiceService) {
 
         var vm = this;
 
-        vm.testTab = 'lsdlakjfdlskajfdl;jlk';
-        vm.testLyric = 'l;kjhkjh';
+        vm.tab = '';
+        vm.lyrics = '';
 
-        //practiceService.fetchTrackData();
+        init();
 
-        var paramVars = $location.search();
-        var title = paramVars['title'];
-        var artist = paramVars['artist'];
+        // private vars
 
-        //fileService.loadTab(artist, title).then(function(tab) {
-        //    vm.testTab = tab.data;
-        //});
-        //
-        //fileService.loadLyric(artist, title).then(function(tab) {
-        //    vm.testLyric = tab.data;
-        //});
+        function init() {
+            practiceService.getPracticeItem($stateParams.itemId).then(function (item) {
+                vm.tab = item.tabData;
+                vm.lyrics = item.lyricData;
+            });
+        }
     }
 
 }());

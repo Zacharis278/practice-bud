@@ -46,9 +46,9 @@
             sortKey = predicate;
         }
 
-        function openItem(artist, title) {
+        function openItem(id) {
 
-            $state.go('practice');
+            $state.go('practice', { itemId: id});
 
         }
     }

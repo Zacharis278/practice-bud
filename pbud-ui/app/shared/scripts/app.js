@@ -19,7 +19,7 @@
                 templateUrl: 'modules/dashboard/views/dashboard.html'
             })
             .state('practice', {
-                url: '/practice',
+                url: '/practice?itemId',
                 controller: 'practiceController',
                 controllerAs: 'practiceCtrl',
                 templateUrl: 'modules/practice/views/practice.html',
