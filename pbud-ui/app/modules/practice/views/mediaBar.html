@@ -1,5 +1,9 @@
 <div id="mediaBar">
 
+    <div id="progressBarContainer" ng-click="vm.updateProgress($event)">
+        <div class="progress-bar" role="progressbar" ng-style="{width: vm.mediaProgress+ '%'}"></div>
+    </div>
+
     <div id="yt-player" style="z-index: -999"></div>
 
     <span id="playPauseBtn" class="controlBtn glyphicon" ng-click="vm.playPause()" ng-class="vm.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span>

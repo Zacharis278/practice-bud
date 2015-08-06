@@ -1,9 +1,10 @@
 #practiceContainer {
+  $mediaBar-Height: 60px;
   height: 100%;
   
   .tabPanel {
     float: left;
-    height: 100%;
+    height: calc(100% - #{$mediaBar-Height});
     width: 60%;
     padding: 10px;
     margin: 0;
@@ -16,7 +17,7 @@
 
   .lyricPanel {
     float: right;
-    height: 100%;
+    height: calc(100% - #{$mediaBar-Height});
     width: 40%;
     padding: 30px;
     margin: 0;
@@ -25,27 +26,36 @@
     border-radius: 0;
     background-color: #e5e5e5;
   }
+
+  #mediaBar {
+    position: fixed;
+    height: $mediaBar-Height;
+    width: 100%;
+    bottom: 0;
+
+    background-color: #7fd999;
+
+    .controlBtn {
+      position: relative;
+      display: block;
+      margin-top: -15px;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    
+    #progressBarContainer {
+      height: 10px;
+      background-color: #808080;
+
+      cursor: pointer;
+    }
+
+    #playPauseBtn {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
 }
 
-#mediaBar {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-
-  background-color: #7fd999;
-
-  .controlBtn {
-    position: relative;
-    display: block;
-    margin-bottom: 10px;
-    font-size: 50px;
-    cursor: pointer;
-  }
-
-  #playPauseBtn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-}
