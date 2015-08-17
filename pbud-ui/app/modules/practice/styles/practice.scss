@@ -48,6 +48,10 @@
       background-color: #808080;
 
       cursor: pointer;
+      
+      .progress-bar {
+        text-align: right;
+      }
     }
 
     #playPauseBtn {
@@ -55,6 +59,14 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+    }
+    
+    #timestamp {
+      position: relative;
+      top: -5px;
+
+      padding-right: 5px;
+      font-size: 11px;
     }
   }
 }
