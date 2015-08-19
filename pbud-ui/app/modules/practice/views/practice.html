@@ -1,12 +1,7 @@
 <div id="practiceContainer">
 
-    <pre class="tabPanel">
-        {{ practiceCtrl.tab }}
-    </pre>
-
-    <pre class="lyricPanel">
-        {{ practiceCtrl.lyrics }}
-    </pre>
+    <practice-content class="tabPanel" data="practiceCtrl.tab"></practice-content>
+    <practice-content class="lyricPanel" data="practiceCtrl.lyrics"></practice-content>
 
     <div media-bar></div>
 

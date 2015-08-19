@@ -1,18 +1,39 @@
 #practiceContainer {
   $mediaBar-Height: 60px;
   height: 100%;
-  
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+
+    font-size: 12px;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    border:1px solid #999999;
+    background-color: inherit;
+  }
+
+  pre {
+    height: 100%;
+    margin: inherit;
+    border: inherit;
+    background-color: inherit;
+  }
+
+  .practiceContent {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
   .tabPanel {
     float: left;
     height: calc(100% - #{$mediaBar-Height});
     width: 60%;
     padding: 10px;
-    margin: 0;
 
     font-size: 12px;
-
-    border: none;
-    background-color: white;
+    background-color: white !important;
   }
 
   .lyricPanel {
@@ -20,10 +41,7 @@
     height: calc(100% - #{$mediaBar-Height});
     width: 40%;
     padding: 30px;
-    margin: 0;
 
-    border: none;
-    border-radius: 0;
     background-color: #e5e5e5;
   }
 
