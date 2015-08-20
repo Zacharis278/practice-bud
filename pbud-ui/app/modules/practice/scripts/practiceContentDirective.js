@@ -5,9 +5,9 @@
         .module('pBud.practice')
         .directive('practiceContent', PracticeContent);
 
-    PracticeContent.$inject = [ '$compile' ];
+    PracticeContent.$inject = [ '$compile', '$timeout' ];
 
-    function PracticeContent($compile) {
+    function PracticeContent($compile, $timeout) {
 
         var editing = false;
 
@@ -32,30 +32,27 @@
                 });
             });
 
-            // this is shitty since I'm in a textarea but it proves the concept
-            ele.bind('keydown keypress', function(event) {
-                if(!editing) return;
+            scope.save = function() {
 
-                editing = false;
-                var keyCode = event.which || event.keyCode;
+                // This is terrible (and unsafe) and I swear I'll fix it later... it also happens to work
+                $timeout(function() {
+                    editing = false;
 
-                // If enter key is pressed
-                if (keyCode === 13) {
                     scope.$apply(function() {
                         ele.html(getTemplate());
                         $compile(ele.contents())(scope);
                     });
-
-                    event.preventDefault();
-                }
-            });
+                }, 10);
+            }
         }
+
+
 
         function getTemplate() {
 
             // prolly transclude this
             if(editing) {
-                return '<textarea class="practiceContent">{{ data }}</textarea>';
+                return '<button class="btn saveButton" ng-click="save()">SAVE</button><textarea class="practiceContent" ng-model="data"></textarea>';
             }
             return '<pre class="practiceContent">{{ data }}</pre>';
         }
