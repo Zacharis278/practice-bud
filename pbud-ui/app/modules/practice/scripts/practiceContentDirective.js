@@ -52,9 +52,9 @@
 
             // prolly transclude this
             if(editing) {
-                return '<button class="btn saveButton" ng-click="save()">SAVE</button><textarea class="practiceContent" ng-model="data"></textarea>';
+                return '<textarea ng-model="data"></textarea><button class="btn saveButton" ng-click="save()">SAVE</button>';
             }
-            return '<pre class="practiceContent">{{ data }}</pre>';
+            return '<pre>{{ data }}</pre>';
         }
 
     }

@@ -1,7 +1,33 @@
 <div id="practiceContainer">
 
-    <practice-content class="practiceContent tabPanel col-md-7" data="practiceCtrl.tab"></practice-content>
-    <practice-content class="practiceContent lyricPanel col-md-5" data="practiceCtrl.lyrics"></practice-content>
+    <div id="infoView" ng-class="practiceCtrl.infoOpen ? '' : 'collapsed'">
+        <div class="fixedContent">
+        <div class="col-sm-6">
+            <div class="inputGroup"><label>Title</label><input ng-model="practiceCtrl.title"/></div>
+            <div class="inputGroup"><label>Artist</label><input ng-model="practiceCtrl.artist"/></div>
+        </div>
+        <div class="col-sm-6">
+            <div class="inputGroup"><label>Play Count</label><span>{{practiceCtrl.playCount}}</span></div>
+            <div class="inputGroup">
+                <label>Progress</label>
+                <span>{{practiceCtrl.progress}}%</span>
+            </div>
+        </div>
+
+        <div>
+            <label>Notes</label>
+            <textarea id="notesText"></textarea>
+        </div>
+        </div>
+    </div>
+    <div class="btn infoViewBtn" ng-click="practiceCtrl.infoOpen = !practiceCtrl.infoOpen">
+        <span class="glyphicon" ng-class="practiceCtrl.infoOpen ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down'"></span>
+    </div>
+
+    <div id="practiceContentContainer">
+       <practice-content class="practiceContent tabPanel col-sm-7" data="practiceCtrl.tab"></practice-content>
+        <practice-content class="practiceContent lyricPanel col-sm-5" data="practiceCtrl.lyrics"></practice-content>
+    </div>
 
     <div media-bar></div>
 
