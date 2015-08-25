@@ -9,9 +9,14 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('app/styles'));
 });
 
+gulp.task('copy-fonts', function() {
+   gulp.src('app/bower_components/font-awesome/fonts/*')
+       .pipe(gulp.dest('app/fonts'));
+});
+
 gulp.task('watch', function() {
     gulp.watch('app/shared/styles/*.scss', ['build-css']);
     gulp.watch('app/modules/*/styles/*.scss', ['build-css']);
 });
 
-gulp.task('default', ['build-css', 'watch']);
+gulp.task('default', ['copy-fonts', 'build-css', 'watch']);

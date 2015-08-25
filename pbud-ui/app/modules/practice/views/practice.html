@@ -3,8 +3,16 @@
     <div id="infoView" ng-class="practiceCtrl.infoOpen ? '' : 'collapsed'">
         <div class="fixedContent">
         <div class="col-sm-6">
-            <div class="inputGroup"><label>Title</label><input ng-model="practiceCtrl.title"/></div>
-            <div class="inputGroup"><label>Artist</label><input ng-model="practiceCtrl.artist"/></div>
+            <div class="inputGroup">
+                <label>Title</label><input ng-model="practiceCtrl.title.value" ng-blur="practiceCtrl.saveValue('title')"/>
+                <span class="spinner" ng-show="practiceCtrl.title.state === practiceCtrl.INPUT_STATE.SAVING"><i class="fa fa-spinner fa-spin"></i></span>
+                <span class="savedIcon" ng-show="practiceCtrl.title.state === practiceCtrl.INPUT_STATE.SAVED"><i class="glyphicon glyphicon-ok-circle"></i></span>
+            </div>
+            <div class="inputGroup">
+                <label>Artist</label><input ng-model="practiceCtrl.artist.value" ng-blur="practiceCtrl.saveValue('artist')"/>
+                <span class="spinner" ng-show="practiceCtrl.artist.state === practiceCtrl.INPUT_STATE.SAVING"><i class="fa fa-spinner fa-spin"></i></span>
+                <span class="savedIcon" ng-show="practiceCtrl.artist.state === practiceCtrl.INPUT_STATE.SAVED"><i class="glyphicon glyphicon-ok-circle"></i></span>
+            </div>
         </div>
         <div class="col-sm-6">
             <div class="inputGroup"><label>Play Count</label><span>{{practiceCtrl.playCount}}</span></div>
@@ -16,6 +24,8 @@
 
         <div>
             <label>Notes</label>
+            <span class="spinner" ng-show="practiceCtrl.notes.state === practiceCtrl.INPUT_STATE.SAVING"><i class="fa fa-spinner fa-spin"></i></span>
+            <span class="savedIcon" ng-show="practiceCtrl.notes.state === practiceCtrl.INPUT_STATE.SAVED"><i class="glyphicon glyphicon-ok-circle"></i></span>
             <textarea id="notesText"></textarea>
         </div>
         </div>

@@ -9,7 +9,8 @@
     "angular-ui-router": "~0.2.15",
     "bootstrap-sass-official": "~3.3.5",
     "angular-bootstrap": "~0.13.1",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.4.0"
   },
   "resolutions": {
     "bootstrap-sass-official": "~3.3.5",
