@@ -5,33 +5,26 @@
         .module('pBud.practice')
         .controller('practiceController', Practice);
 
-    Practice.$inject = ['$stateParams', '$timeout', 'practiceService', 'INPUT_STATE'];
+    Practice.$inject = ['$stateParams', '$timeout', 'practiceService'];
 
-    function Practice($stateParams, $timeout, practiceService, INPUT_STATE) {
+    function Practice($stateParams, $timeout, practiceService) {
 
         var vm = this;
 
         // public API
-        vm.saveValue = saveValue;
+        vm.saveTitle = saveTitle;
+        vm.saveArtist = saveArtist;
+        vm.saveNotes = saveNotes;
 
         // data model
-        vm.title = {
-            value: '',
-            state: INPUT_STATE.NONE
-        };
-        vm.artist = {
-            value: '',
-            state: INPUT_STATE.NONE
-        };
+        vm.title = '';
+        vm.artist = '';
         vm.tab = '';
         vm.lyrics = '';
         vm.notes = '';
         vm.playCount = 0;
         vm.progress = 0;
         vm.lastPlayed = null;
-
-        // expose constants to view
-        vm.INPUT_STATE = INPUT_STATE;
 
         // view state
         vm.infoOpen = false;
@@ -44,32 +37,24 @@
             practiceService.getPracticeItem($stateParams.itemId).then(function (item) {
                 vm.tab = item.tabData;
                 vm.lyrics = item.lyricData;
-                vm.title.value = item.title;
-                vm.artist.value = item.artist;
+                vm.title = item.title;
+                vm.artist = item.artist;
                 vm.playCount = item.playCount;
                 vm.progress = item.progress;
                 vm.lastPlayed = item.lastPlayed;
             });
         }
 
-        function saveValue(key) {
-            if(!vm[key]) {
-                console.log('you should feel bad');
-            }
+        function saveTitle(value) {
+            return practiceService.updateItem('title', value, $stateParams.id);
+        }
 
-            vm[key].state = 1;
+        function saveArtist(value) {
+            return practiceService.updateItem('artist', value, $stateParams.id);
+        }
 
-            // mock service call w/ timeout instead
-            console.log('saving ' + key);
-            //practiceService.updateItem(key, vm[key].value);
-            $timeout(function () {
-                vm[key].state = INPUT_STATE.SAVING;
-            }, 2000).then(function() {
-                vm[key].state = INPUT_STATE.SAVED;
-                $timeout(function () {
-                    vm[key].state = INPUT_STATE.NONE;
-                }, 2000);
-            });
+        function saveNotes(value) {
+            return practiceService.updateItem('notes', value, $stateParams.id);
         }
     }
 

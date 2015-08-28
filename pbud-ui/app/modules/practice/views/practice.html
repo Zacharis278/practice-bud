@@ -2,32 +2,19 @@
 
     <div id="infoView" ng-class="practiceCtrl.infoOpen ? '' : 'collapsed'">
         <div class="fixedContent">
-        <div class="col-sm-6">
-            <div class="inputGroup">
-                <label>Title</label><input ng-model="practiceCtrl.title.value" ng-blur="practiceCtrl.saveValue('title')"/>
-                <span class="spinner" ng-show="practiceCtrl.title.state === practiceCtrl.INPUT_STATE.SAVING"><i class="fa fa-spinner fa-spin"></i></span>
-                <span class="savedIcon" ng-show="practiceCtrl.title.state === practiceCtrl.INPUT_STATE.SAVED"><i class="glyphicon glyphicon-ok-circle"></i></span>
+            <div class="col-sm-6">
+                <practice-input class="inputGroup" label-text="'Title'" use-textarea="false" value="practiceCtrl.title" save-callback="practiceCtrl.saveTitle"></practice-input>
+                <practice-input class="inputGroup" label-text="'Artist'" use-textarea="false" value="practiceCtrl.artist" save-callback="practiceCtrl.saveArtist"></practice-input>
             </div>
-            <div class="inputGroup">
-                <label>Artist</label><input ng-model="practiceCtrl.artist.value" ng-blur="practiceCtrl.saveValue('artist')"/>
-                <span class="spinner" ng-show="practiceCtrl.artist.state === practiceCtrl.INPUT_STATE.SAVING"><i class="fa fa-spinner fa-spin"></i></span>
-                <span class="savedIcon" ng-show="practiceCtrl.artist.state === practiceCtrl.INPUT_STATE.SAVED"><i class="glyphicon glyphicon-ok-circle"></i></span>
+            <div class="col-sm-6">
+                <div class="inputGroup"><label>Play Count</label><span>{{practiceCtrl.playCount}}</span></div>
+                <div class="inputGroup">
+                    <label>Progress</label>
+                    <span>{{practiceCtrl.progress}}%</span>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="inputGroup"><label>Play Count</label><span>{{practiceCtrl.playCount}}</span></div>
-            <div class="inputGroup">
-                <label>Progress</label>
-                <span>{{practiceCtrl.progress}}%</span>
-            </div>
-        </div>
 
-        <div>
-            <label>Notes</label>
-            <span class="spinner" ng-show="practiceCtrl.notes.state === practiceCtrl.INPUT_STATE.SAVING"><i class="fa fa-spinner fa-spin"></i></span>
-            <span class="savedIcon" ng-show="practiceCtrl.notes.state === practiceCtrl.INPUT_STATE.SAVED"><i class="glyphicon glyphicon-ok-circle"></i></span>
-            <textarea id="notesText"></textarea>
-        </div>
+            <practice-input class="inputGroup" label-text="'Notes'" use-textarea="true" value="practiceCtrl.notes" save-callback="practiceCtrl.saveNotes"></practice-input>
         </div>
     </div>
     <div class="btn infoViewBtn" ng-click="practiceCtrl.infoOpen = !practiceCtrl.infoOpen">
