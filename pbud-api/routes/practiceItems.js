@@ -29,6 +29,26 @@ router.get('/practiceItems/:itemId', function(req, res, next) {
     });
 });
 
+/* PUT update to existing item */
+router.put('/practiceItems/:itemId/:field', function (req, res, next) {
+
+    var query = PracticeItem.findById(req.params.itemId);
+
+    query.exec(function(err, item) {
+        if(err) return next(err);
+
+        item[req.params.field] = req.body.value;
+        item.save(function(err) {
+            if(err) {
+                return next(err);
+            }
+
+            res.status(200).json({ message: 'Item successfully updated'});
+        })
+    });
+
+});
+
 /* POST new practice item */
 router.post('/practiceItems', function (req, res, next) {
 
