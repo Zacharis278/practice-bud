@@ -22,8 +22,8 @@
     </div>
 
     <div id="practiceContentContainer">
-       <practice-content class="practiceContent tabPanel col-sm-7" data="practiceCtrl.tab"></practice-content>
-        <practice-content class="practiceContent lyricPanel col-sm-5" data="practiceCtrl.lyrics"></practice-content>
+       <practice-content class="practiceContent tabPanel col-sm-7" data="practiceCtrl.tab" save-callback="practiceCtrl.saveTab"></practice-content>
+        <practice-content class="practiceContent lyricPanel col-sm-5" data="practiceCtrl.lyrics" save-callback="practiceCtrl.saveLyrics"></practice-content>
     </div>
 
     <div media-bar></div>

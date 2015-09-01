@@ -14,7 +14,8 @@
         return {
             restrict: 'E',
             scope: {
-                data: '=data'
+                data: '=',
+                saveCallback: '='
             },
             template: getTemplate(),
             link: linkFn
@@ -43,6 +44,8 @@
                         $compile(ele.contents())(scope);
                     });
                 }, 10);
+
+                scope.saveCallback(scope.data);  // no err handling yet
             }
         }
 
