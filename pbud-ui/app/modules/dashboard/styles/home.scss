@@ -1,7 +1,73 @@
 #homeContent {
 
   #bannerContent {
-    height: 150px;
+    height: 100px;
+    padding: 15px;
+
     background-color: #7fd999;
+
+    .iconNavItem {
+      width: 80px;
+      margin: auto;
+      text-align: center;
+
+      cursor: pointer;
+    }
+    .iconNavItem:active {
+      font-weight: bold;
+    }
+
+    .iconText {
+      width: 100%;
+    }
+
+    .icon {
+      font-size: 50px;
+    }
   }
+}
+
+#newItemModal {
+  border-radius: 0;
+  padding: 30px;
+  background-color: #f1f1f2;
+
+  .item-form {
+    height: 180px;
+    width: 450px;
+    margin-left: 30px;
+    margin-right: 60px;
+
+    label {
+      height: 40px;
+      line-height: 40px;
+      float: left;
+      clear: left;
+      text-align: right;
+      width: 80px;
+      margin-right: 10px;
+    }
+
+    #submitButton {
+      float: right;
+      background-color: #7fd999;
+      border-radius: 0;
+    }
+
+    .input-container {
+      width: 360px;
+      float: left;
+      margin-bottom: 15px;
+      padding-top: 2px; // push down to account for descenders
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.modal-content {
+  border: none;
+  border-radius: 0 0;
 }

@@ -5,14 +5,15 @@
         .module('pBud.dashboard')
         .controller('dashboardController', Dashboard);
 
-    Dashboard.$inject = ['$filter', '$state', 'dashboardService'];
+    Dashboard.$inject = ['$filter', '$modal', '$state', 'dashboardService'];
 
-    function Dashboard($filter, $state, dashboardService) {
+    function Dashboard($filter, $modal, $state, dashboardService) {
 
         // public view model
         var vm = this;
         vm.sortRows = sortRows;
         vm.openItem = openItem;
+        vm.newItemForm = newItemForm;
 
         vm.gridItems = [];
 
@@ -50,6 +51,13 @@
 
             $state.go('practice', { itemId: id});
 
+        }
+
+        function newItemForm() {
+            $modal.open({
+                templateUrl: 'modules/dashboard/views/newItemModal.html',
+                windowClass: 'expanded-dialog'
+            });
         }
     }
 }());
