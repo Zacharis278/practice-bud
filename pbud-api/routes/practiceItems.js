@@ -56,7 +56,6 @@ router.post('/practiceItems', function (req, res, next) {
 
     // just create an item, no validation yet
     var practiceItem = new PracticeItem({
-        _id: 1,
         title: item.title,
         artist: item.artist,
         progress: item.progress,
