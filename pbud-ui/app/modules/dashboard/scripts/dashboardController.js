@@ -55,7 +55,7 @@
 
         function newItemForm() {
             $modal.open({
-                templateUrl: 'modules/dashboard/views/newItemModal.html',
+                template: '<new-item></new-item>',
                 windowClass: 'expanded-dialog'
             });
         }

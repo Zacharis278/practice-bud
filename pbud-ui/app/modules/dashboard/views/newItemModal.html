@@ -1,27 +1,30 @@
 <div id="newItemModal">
 
-    <form name="itemForm" class="item-form" novalidate>
+    <h2>New Track</h2>
+
+    <form name="itemForm" class="item-form" ng-submit="vm.submit()">
 
         <label>Title</label>
         <div class="input-container">
-            <input type="text" />
+            <input type="text" placeholder="(required)" ng-model="vm.title" required />
         </div>
 
         <label>Artist</label>
         <div class="input-container">
-            <input type="text" />
+            <input type="text" ng-model="vm.artist"/>
         </div>
 
         <label>YouTube ID</label>
         <div class="input-container">
-            <input type="text" />
+            <input type="text" ng-model="vm.mediaId"/>
         </div>
 
         <div id="errorMessage"></div>
 
         <div class="clearfix"></div>
 
-        <button id="submitButton" type="button" class="btn" ng-click="">NEXT</button>
+        <span class="errorMessage">{{vm.error}}</span>
+        <button id="submitButton" type="submit" class="btn">NEXT</button>
 
     </form>
 </div>

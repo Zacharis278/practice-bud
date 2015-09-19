@@ -1,7 +1,22 @@
 html body {
   height: 100%;
+  color: #473E3F;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #6CCECB;
+  outline: none;
+}
+input:invalid {
+  border-color: #EF7126
 }
 
 .mainContent {
   height: calc(100% - 50px);
+}
+
+.errorMessage {
+  color: #EF7126;
 }

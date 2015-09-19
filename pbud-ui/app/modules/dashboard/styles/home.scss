@@ -4,7 +4,7 @@
     height: 100px;
     padding: 15px;
 
-    background-color: #7fd999;
+    background-color: #8EDC9D;
 
     .iconNavItem {
       width: 80px;
@@ -30,13 +30,17 @@
 #newItemModal {
   border-radius: 0;
   padding: 30px;
-  background-color: #f1f1f2;
+  background-color: #ffffff;
+
+  h2 {
+    margin-top: 0;
+  }
 
   .item-form {
     height: 180px;
-    width: 450px;
-    margin-left: 30px;
-    margin-right: 60px;
+    width: 460px;
+    margin-left: 25px;
+    margin-right: 55px;
 
     label {
       height: 40px;
@@ -44,14 +48,24 @@
       float: left;
       clear: left;
       text-align: right;
-      width: 80px;
+      width: 90px;
       margin-right: 10px;
     }
 
     #submitButton {
       float: right;
-      background-color: #7fd999;
+      color: #6CCECB;
+      font-weight: bolder;
+      background-color: #ffffff;
       border-radius: 0;
+      outline: none;
+
+      -webkit-transition-property: background-color, color;
+      -webkit-transition-duration: 0.4s;
+    }
+    #submitButton:active {
+      color: #ffffff;
+      background-color: #6CCECB;
     }
 
     .input-container {
@@ -61,8 +75,15 @@
       padding-top: 2px; // push down to account for descenders
 
       input {
+        position: relative;
+        top: 5px;
         width: 100%;
       }
+    }
+
+    .errorMessage {
+      position: relative;
+      top: 5px;
     }
   }
 }

@@ -1,5 +1,5 @@
 (function() {
-    'use strict'
+    'use strict';
 
     angular
         .module('pBud.dashboard')
@@ -11,7 +11,8 @@
 
         // Public API
         var service = {
-            getGridItems: getGridItems
+            getGridItems: getGridItems,
+            createNewItem: createNewItem
         };
 
         // private
@@ -43,6 +44,15 @@
             });
 
             return deferred.promise;
+        }
+
+        function createNewItem(item) {
+            return $http.post('/practiceBud/api/v1/practiceItems/', item).then(function(res) {
+                return res.data._id;
+            }, function(err) {
+                $log.error('shits wrong yo: ' + err);
+                return $q.reject(err);
+            })
         }
     }
 
