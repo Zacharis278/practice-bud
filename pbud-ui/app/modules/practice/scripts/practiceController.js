@@ -5,9 +5,9 @@
         .module('pBud.practice')
         .controller('practiceController', Practice);
 
-    Practice.$inject = ['$stateParams', '$timeout', 'practiceService'];
+    Practice.$inject = ['$scope', '$state', '$stateParams', '$modal', 'practiceService'];
 
-    function Practice($stateParams, $timeout, practiceService) {
+    function Practice($scope, $state, $stateParams, $modal, practiceService) {
 
         var itemId = null;
 
@@ -19,6 +19,9 @@
         vm.saveNotes = saveNotes;
         vm.saveTab = saveTab;
         vm.saveLyrics = saveLyrics;
+        vm.openSummary = openSummary;
+        vm.submitSession = submitSession;
+        vm.updateProgress = updateProgress;
 
         // data model
         vm.title = '';
@@ -31,6 +34,8 @@
         vm.lastPlayed = null;
         vm.mediaId = 123;
 
+        vm.sessionProgress = 0;
+
         // view state
         vm.infoOpen = false;
 
@@ -41,16 +46,31 @@
         function init() {
             itemId = $stateParams.itemId;
 
-            practiceService.getPracticeItem($stateParams.itemId).then(function (item) {
+            vm.ratingsCategories = [
+                {id: 1, label: 'Play Through', value: 0, weight: 40},
+                {id: 2, label: 'Accuracy/Technique', value: 0, weight: 30},
+                {id: 3, label: 'Tempo', value: 0, weight: 10},
+                {id: 4, label: 'Memorization', value: 0, weight: 10},
+                {id: 5, label: 'Musicality', value: 0, weight: 10}
+            ];
+
+            practiceService.getPracticeItem(itemId).then(function (item) {
                 vm.tab = item.tabData;
                 vm.lyrics = item.lyricData;
                 vm.title = item.title;
                 vm.artist = item.artist;
-                vm.playCount = item.playCount;
-                vm.progress = item.progress;
+                vm.playCount = item.playCount || 0;
+                vm.progress = item.progress || 0;
                 vm.lastPlayed = item.lastPlayed;
                 vm.notes = item.notes;
                 vm.mediaId = item.mediaId;
+
+                if(vm.lyrics) {
+                    vm.ratingsCategories.push({id: 6, label: 'Vocals', value: 0, weight: 40});
+                    angular.forEach(vm.ratingsCategories, function(category) {
+                        category.weight = category.weight * 100/140;
+                    });
+                }
             });
         }
 
@@ -72,6 +92,24 @@
 
         function saveLyrics(value) {
             return practiceService.updateItem('lyricData', value, itemId);
+        }
+
+        function openSummary() {
+            $modal.open({
+                templateUrl: 'modules/practice/views/practiceSummary.html',
+                scope: $scope,
+                windowClass: 'expanded-dialog'
+            })
+        }
+
+        function updateProgress(rating, index) {
+            vm.sessionProgress += (rating - vm.ratingsCategories[index].value)/5 * vm.ratingsCategories[index].weight;
+        }
+
+        function submitSession() {
+            practiceService.saveSession(vm.ratingsCategories, itemId).finally(function() {
+                $state.go('dashboard');
+            });
         }
     }
 

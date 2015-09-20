@@ -10,7 +10,7 @@
 
     <div>
         <span id="playPauseBtn" class="controlBtn glyphicon" ng-click="vm.playPause()" ng-class="vm.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span>
-        <span id="doneButton" class="controlBtn">DONE! <img src="assets/devil-horns.svg" /> </span>
+        <span id="doneButton" class="controlBtn" ng-click="vm.endSession()">DONE! <img src="assets/devil-horns.svg" /> </span>
         <!-- TODO: Credit devil-horn icon somewhere https://www.iconfinder.com/icons/329408/gesture_hand_rock_roll_icon -->
     </div>
 </div>

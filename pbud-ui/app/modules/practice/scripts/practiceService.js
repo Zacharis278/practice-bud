@@ -12,7 +12,8 @@
         // Public API
         var service = {
             getPracticeItem: getPracticeItem,
-            updateItem: updateItem
+            updateItem: updateItem,
+            saveSession: saveSession
         };
 
         // private
@@ -34,8 +35,20 @@
             }, function(err) {
                 $log.error('shits wrong yo: ' + err);
                 return $q.reject(err);
-            })
+            });
         }
+
+        function saveSession(evaluation, id) {
+
+            // simplify view object
+            var ratings = [];
+            angular.forEach(evaluation, function(category) {
+                ratings.push({categoryId: category.id, rating: category.value});
+            });
+
+            return $http.post('/practiceBud/api/v1/practiceItems/'+id+'/sessions', {evaluation: ratings});
+        }
+
     }
 
 }());

@@ -13,6 +13,23 @@ input:invalid {
   border-color: #EF7126
 }
 
+button {
+  float: right;
+  color: #FF9900;
+  font-weight: bolder;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0;
+  outline: none;
+
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 0.4s;
+}
+button:active {
+  color: #ffffff;
+  background-color: #8EDC9D;
+}
+
 .mainContent {
   height: calc(100% - 50px);
 }

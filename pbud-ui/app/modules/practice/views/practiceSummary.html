@@ -1,0 +1,22 @@
+<div id="practiceSummary">
+    <div class="contentLeft">
+        <h2>Session Summary</h2>
+        <span>Rate Yourself:</span>
+        <div id="ratingForm">
+            <div ng-repeat="category in vm.ratingsCategories">
+                <div class="ratingLabel">{{category.label}}</div>
+                <star-rating class="ratingValue" ng-model="category.value" on-rating-select="vm.updateProgress(rating, $index)"></star-rating>
+            </div>
+        </div>
+    </div>
+    <div class="contentRight">
+        <div id="overallProgress">Total Progress <span>{{vm.progress | number: 0}}%</span></div>
+        <div id="sessionInfo">
+            <div id="sessionProgress">Session Rating <span class="dataValue">{{vm.sessionProgress | number: 0}}%</span></div>
+            <div>Last Rating <span class="dataValue">N/A</span></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <button id="submitButton" ng-click="vm.submitSession()">Confirm and Save</button>
+    <div class="clearfix"></div>
+</div>

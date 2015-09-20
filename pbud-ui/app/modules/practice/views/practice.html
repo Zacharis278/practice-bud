@@ -1,31 +1,31 @@
 <div id="practiceContainer">
 
-    <div id="infoView" ng-class="practiceCtrl.infoOpen ? '' : 'collapsed'">
+    <div id="infoView" ng-class="vm.infoOpen ? '' : 'collapsed'">
         <div class="fixedContent">
             <div class="col-sm-6">
-                <practice-input class="inputGroup" label-text="'Title'" use-textarea="false" value="practiceCtrl.title" save-callback="practiceCtrl.saveTitle"></practice-input>
-                <practice-input class="inputGroup" label-text="'Artist'" use-textarea="false" value="practiceCtrl.artist" save-callback="practiceCtrl.saveArtist"></practice-input>
+                <practice-input class="inputGroup" label-text="'Title'" use-textarea="false" value="vm.title" save-callback="vm.saveTitle"></practice-input>
+                <practice-input class="inputGroup" label-text="'Artist'" use-textarea="false" value="vm.artist" save-callback="vm.saveArtist"></practice-input>
             </div>
             <div class="col-sm-6">
-                <div class="inputGroup"><label>Play Count</label><span>{{practiceCtrl.playCount}}</span></div>
+                <div class="inputGroup"><label>Play Count</label><span>{{vm.playCount}}</span></div>
                 <div class="inputGroup">
                     <label>Progress</label>
-                    <span>{{practiceCtrl.progress}}%</span>
+                    <span>{{vm.progress}}%</span>
                 </div>
             </div>
 
-            <practice-input class="inputGroup" label-text="'Notes'" use-textarea="true" value="practiceCtrl.notes" save-callback="practiceCtrl.saveNotes"></practice-input>
+            <practice-input class="inputGroup" label-text="'Notes'" use-textarea="true" value="vm.notes" save-callback="vm.saveNotes"></practice-input>
         </div>
     </div>
-    <div class="btn infoViewBtn" ng-click="practiceCtrl.infoOpen = !practiceCtrl.infoOpen">
-        <span class="glyphicon" ng-class="practiceCtrl.infoOpen ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down'"></span>
+    <div class="btn infoViewBtn" ng-click="vm.infoOpen = !vm.infoOpen">
+        <span class="glyphicon" ng-class="vm.infoOpen ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down'"></span>
     </div>
 
     <div id="practiceContentContainer">
-       <practice-content class="practiceContent tabPanel col-sm-7" data="practiceCtrl.tab" save-callback="practiceCtrl.saveTab"></practice-content>
-        <practice-content class="practiceContent lyricPanel col-sm-5" data="practiceCtrl.lyrics" save-callback="practiceCtrl.saveLyrics"></practice-content>
+       <practice-content class="practiceContent tabPanel col-sm-7" data="vm.tab" save-callback="vm.saveTab"></practice-content>
+        <practice-content class="practiceContent lyricPanel col-sm-5" data="vm.lyrics" save-callback="vm.saveLyrics"></practice-content>
     </div>
 
-    <div media-bar media-id="practiceCtrl.mediaId"></div>
+    <div media-bar media-id="vm.mediaId" end-session="vm.openSummary"></div>
 
 </div>

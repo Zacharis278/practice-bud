@@ -18,7 +18,8 @@
         return {
             restrict: 'A',
             scope: {
-                mediaId: '='
+                mediaId: '=',
+                endSession: '='
             },
             controller: controller,
             controllerAs: 'vm',

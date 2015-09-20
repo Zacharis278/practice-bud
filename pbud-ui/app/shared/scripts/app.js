@@ -21,7 +21,7 @@
             .state('practice', {
                 url: '/practice?itemId',
                 controller: 'practiceController',
-                controllerAs: 'practiceCtrl',
+                controllerAs: 'vm',
                 templateUrl: 'modules/practice/views/practice.html',
                 inherit: true
             });
