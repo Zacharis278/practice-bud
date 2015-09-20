@@ -91,8 +91,8 @@
       position: relative;
       margin-top: -34px;
       bottom: 20px;
-      background-color: #449d44;
-      opacity: 0.4;
+      background-color: #6CCECB;
+      opacity: 0.6;
       border-radius: 0;
       z-index: 99999;
     }
@@ -146,6 +146,21 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+    }
+
+    #doneButton {
+      float: right;
+      position: relative;
+      bottom: 20px;
+      margin-right: 10px;
+      font-size: 25px;
+      font-weight: bold;
+
+      -webkit-transition-property: color;
+      -webkit-transition-duration: 0.2s;
+    }
+    #doneButton:hover {
+      color: #218C8D;
     }
     
     #timestamp {

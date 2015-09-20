@@ -17,6 +17,9 @@
 
         return {
             restrict: 'A',
+            scope: {
+                mediaId: '='
+            },
             controller: controller,
             controllerAs: 'vm',
             bindToController: true,
@@ -33,7 +36,7 @@
             vm.updateProgress = updateProgress;
         }
 
-        function linkFn() {
+        function linkFn(scope) {
 
             if(document.getElementById('YouTubeAPI')) {
                 createPlayer();
@@ -55,7 +58,7 @@
             new YT.Player('yt-player', {
                 height: '0',
                 width: '0',
-                videoId: '4x23l6BGu3w',
+                videoId: vm.mediaId.toString(),
                 events: {
                     'onReady': function (event) {
                         player = event.target;

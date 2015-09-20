@@ -29,6 +29,7 @@
         vm.playCount = 0;
         vm.progress = 0;
         vm.lastPlayed = null;
+        vm.mediaId = 123;
 
         // view state
         vm.infoOpen = false;
@@ -49,6 +50,7 @@
                 vm.progress = item.progress;
                 vm.lastPlayed = item.lastPlayed;
                 vm.notes = item.notes;
+                vm.mediaId = item.mediaId;
             });
         }
 
