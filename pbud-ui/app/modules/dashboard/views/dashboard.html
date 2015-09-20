@@ -3,7 +3,7 @@
         <div class="iconNavItem" ng-click="dashboardCtrl.newItemForm()"><i class="icon fa fa-plus"></i><div class="iconText">Add New</div></div>
     </div>
 
-    <table class="table table-hover">
+    <table id="practiceGrid" class="table table-hover">
         <thead>
         <tr>
             <th ng-repeat="header in dashboardCtrl.gridHeaders" ng-click="dashboardCtrl.sortRows($index)"> {{ header }} <span class="sortIcon"></span> </th>

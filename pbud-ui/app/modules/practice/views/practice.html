@@ -3,7 +3,7 @@
     <div id="infoView" ng-class="vm.infoOpen ? '' : 'collapsed'">
         <div class="fixedContent">
             <div class="col-sm-6">
-                <practice-input class="inputGroup" label-text="'Title'" use-textarea="false" value="vm.title" save-callback="vm.saveTitle"></practice-input>
+                <practice-input class="inputGroup" label-text="'Title'" use-textarea="false" value="vm.title" save-callback="vm.saveTitle" required="true"></practice-input>
                 <practice-input class="inputGroup" label-text="'Artist'" use-textarea="false" value="vm.artist" save-callback="vm.saveArtist"></practice-input>
             </div>
             <div class="col-sm-6">

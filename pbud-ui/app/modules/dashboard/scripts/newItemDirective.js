@@ -31,7 +31,7 @@
             vm = this;
             vm.title = '';
             vm.artist = '';
-            vm.mediaId = 'kjhjh';
+            vm.mediaId = '';
             vm.error = '';
 
             vm.submit = submit;

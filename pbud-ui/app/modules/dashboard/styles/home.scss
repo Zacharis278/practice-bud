@@ -25,6 +25,12 @@
       font-size: 50px;
     }
   }
+
+  #practiceGrid {
+    tr {
+      cursor: pointer;
+    }
+  }
 }
 
 #newItemModal {
