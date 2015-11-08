@@ -4,6 +4,9 @@ pbud-ui/styles
 # ignore node modules
 pbud-ui/node_modules/
 
+# compiled css
+pbud-ui/main.css
+
 # Below Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 
 *.iml
