@@ -36,7 +36,6 @@
         function init() {
             dashboardService.getGridItems().then(function(gridList){
                 vm.gridItems = gridList;
-                console.log(gridList);
             });
         }
 

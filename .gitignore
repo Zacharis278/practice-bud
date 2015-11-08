@@ -5,7 +5,7 @@ pbud-ui/styles
 pbud-ui/node_modules/
 
 # compiled css
-pbud-ui/main.css
+pbud-ui/app/styles/main.css
 
 # Below Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 
