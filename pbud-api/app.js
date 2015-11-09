@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var practiceItemSchema = require('./models/practiceItem');
 
 var practiceItems = require('./routes/practiceItems');
+var practiceService = require('./services/practiceService');
 
 var app = express();
 

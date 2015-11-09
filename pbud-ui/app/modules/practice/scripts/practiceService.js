@@ -43,7 +43,7 @@
             // simplify view object
             var ratings = [];
             angular.forEach(evaluation, function(category) {
-                ratings.push({categoryId: category.id, rating: category.value});
+                ratings.push({categoryId: category.id, rating: category.value, weight: category.weight});
             });
 
             return $http.post('/practiceBud/api/v1/practiceItems/'+id+'/sessions', {evaluation: ratings});
