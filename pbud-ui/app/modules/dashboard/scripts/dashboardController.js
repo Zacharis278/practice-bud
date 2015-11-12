@@ -18,11 +18,11 @@
         vm.gridItems = [];
 
         vm.gridHeaders = [
-            'title',
-            'artist',
-            'progress',
-            'lastPlayed',
-            'playCount'
+            'Title',
+            'Artist',
+            'Progress',
+            'Last Played',
+            'Play Count'
         ];
 
         init();

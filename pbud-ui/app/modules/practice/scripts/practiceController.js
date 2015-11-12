@@ -10,6 +10,7 @@
     function Practice($scope, $state, $stateParams, $modal, practiceService) {
 
         var itemId = null;
+        var modalInstace = null;
 
         var vm = this;
 
@@ -95,7 +96,7 @@
         }
 
         function openSummary() {
-            $modal.open({
+            modalInstace = $modal.open({
                 templateUrl: 'modules/practice/views/practiceSummary.html',
                 scope: $scope,
                 windowClass: 'expanded-dialog'
@@ -107,7 +108,10 @@
         }
 
         function submitSession() {
+            // TODO: Replace w/ error instead of closing on error
             practiceService.saveSession(vm.ratingsCategories, itemId).finally(function() {
+                modalInstace.close();
+
                 $state.go('home');
             });
         }

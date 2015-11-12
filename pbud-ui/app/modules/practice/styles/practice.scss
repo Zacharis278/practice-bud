@@ -88,14 +88,27 @@
       background-color: inherit;
     }
 
-    .saveButton {
+    .buttonGrp {
       position: relative;
       margin-top: -34px;
       bottom: 20px;
+      z-index: 99999;
+    }
+
+    .saveButton {
+      font-weight: bold;
+      color: #ffffff;
       background-color: #6CCECB;
       opacity: 0.6;
       border-radius: 0;
-      z-index: 99999;
+    }
+
+    .cancelButton {
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #ff0000;
+      opacity: 0.6;
+      border-radius: 0;
     }
   }
 
