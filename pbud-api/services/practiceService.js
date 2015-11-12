@@ -40,12 +40,12 @@ function updateItem(itemId, field, value, next) {
         function(done) {
             getItemById(itemId, done)
         },
-        function(err, item, done) {
+        function(item, done) {
             item[field] = value;
             item.save(function(err, item) {
                 if(err) return next(err);   // TODO: DB error handle
 
-                done(item)
+                done(null, item)
             });
         }
     ], next);
