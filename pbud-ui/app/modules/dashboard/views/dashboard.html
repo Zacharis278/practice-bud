@@ -13,7 +13,7 @@
         <tr ng-repeat="item in dashboardCtrl.gridItems" ng-click="dashboardCtrl.openItem(item._id)">
             <td>{{ item.title }}</td>
             <td>{{ item.artist }}</td>
-            <td>{{ item.progress }}</td>
+            <td>{{ item.progress * 100 | number:0 }}%</td>
             <td>{{ item.lastPlayed | date:'MM/dd/yyyy' }}</td>
             <td>{{ item.playCount }}</td>
         </tr>

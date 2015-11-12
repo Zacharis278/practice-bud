@@ -7,10 +7,10 @@
                 <practice-input class="inputGroup" label-text="'Artist'" use-textarea="false" value="vm.artist" save-callback="vm.saveArtist"></practice-input>
             </div>
             <div class="col-sm-6">
-                <div class="inputGroup"><label>Play Count</label><span>{{vm.playCount}}</span></div>
+                <div class="inputGroup"><label>Play Count</label><span>{{vm.playCount | number:0}}</span></div>
                 <div class="inputGroup">
                     <label>Progress</label>
-                    <span>{{vm.progress}}%</span>
+                    <span>{{vm.progress * 100 | number:0}}%</span>
                 </div>
             </div>
 

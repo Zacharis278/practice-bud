@@ -10,9 +10,9 @@
         </div>
     </div>
     <div class="contentRight">
-        <div id="overallProgress">Total Progress <span>{{vm.progress | number: 0}}%</span></div>
+        <div id="overallProgress">Total Progress <span>{{vm.progress*100 | number: 0}}%</span></div>
         <div id="sessionInfo">
-            <div id="sessionProgress">Session Rating <span class="dataValue">{{vm.sessionProgress | number: 0}}%</span></div>
+            <div id="sessionProgress">Session Rating <span class="dataValue">{{vm.sessionProgress*100 | number: 0}}%</span></div>
             <div>Last Rating <span class="dataValue">N/A</span></div>
         </div>
     </div>

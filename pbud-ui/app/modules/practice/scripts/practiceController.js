@@ -103,12 +103,12 @@
         }
 
         function updateProgress(rating, index) {
-            vm.sessionProgress += (rating - vm.ratingsCategories[index].value)/5 * vm.ratingsCategories[index].weight;
+            vm.sessionProgress += (rating - vm.ratingsCategories[index].value)/5 * vm.ratingsCategories[index].weight / 100;
         }
 
         function submitSession() {
             practiceService.saveSession(vm.ratingsCategories, itemId).finally(function() {
-                $state.go('dashboard');
+                $state.go('home');
             });
         }
     }
