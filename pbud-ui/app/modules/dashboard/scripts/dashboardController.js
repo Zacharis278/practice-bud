@@ -13,6 +13,7 @@
         var vm = this;
         vm.sortRows = sortRows;
         vm.openItem = openItem;
+        vm.openRandom = openRandom;
         vm.newItemForm = newItemForm;
 
         vm.gridItems = [];
@@ -44,6 +45,11 @@
             sortReverse = predicate != sortKey || !sortReverse;
             vm.gridItems = $filter('orderBy')(vm.gridItems, predicate, sortReverse);
             sortKey = predicate;
+        }
+
+        function openRandom() {
+            var item = vm.gridItems[ Math.floor(Math.random()*vm.gridItems.length) ];
+            openItem(item._id)
         }
 
         function openItem(id) {
