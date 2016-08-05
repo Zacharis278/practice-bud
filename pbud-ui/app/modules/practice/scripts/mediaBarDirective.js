@@ -40,6 +40,9 @@
         function linkFn(scope) {
 
             if(document.getElementById('YouTubeAPI')) {
+                if(!vm.mediaId) {
+                    scope.$watch('vm.mediaId', createPlayer);
+                }
                 createPlayer();
             }
             else {
@@ -56,6 +59,7 @@
         }
 
         function createPlayer() {
+            if(!vm.mediaId) { return } // only run w/ valid id
             new YT.Player('yt-player', {
                 height: '0',
                 width: '0',

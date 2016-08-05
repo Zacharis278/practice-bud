@@ -33,7 +33,7 @@
         vm.playCount = 0;
         vm.progress = 0;
         vm.lastPlayed = null;
-        vm.mediaId = 123;
+        vm.mediaId = '';
 
         vm.sessionProgress = 0;
 
