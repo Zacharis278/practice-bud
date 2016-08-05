@@ -39,6 +39,11 @@ var PracticeItem = mongoose.model('PracticeItem', practiceItemSchema);
 mongoose.connect('localhost/pbud');
 
 /*
+ * Serve UI as static content (symlink this to ui project)
+ */
+app.use(express.static('public'));
+
+/*
  * API ROUTES
  */
 app.use('/practiceBud/api/v1/', practiceItems);
