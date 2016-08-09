@@ -17,7 +17,9 @@
         // public API
         vm.saveTitle = saveTitle;
         vm.saveArtist = saveArtist;
+        vm.saveMediaId = saveMediaId;
         vm.saveNotes = saveNotes;
+        vm.deleteTrack = deleteTrack;
         vm.saveTab = saveTab;
         vm.saveLyrics = saveLyrics;
         vm.openSummary = openSummary;
@@ -83,6 +85,10 @@
             return practiceService.updateItem('artist', value, itemId);
         }
 
+        function saveMediaId(value) {
+            return practiceService.updateItem('mediaId', value, itemId);
+        }
+
         function saveNotes(value) {
             return practiceService.updateItem('notes', value, itemId);
         }
@@ -93,6 +99,10 @@
 
         function saveLyrics(value) {
             return practiceService.updateItem('lyricData', value, itemId);
+        }
+
+        function deleteTrack() {
+            return practiceService.deleteItem(itemId);
         }
 
         function openSummary() {

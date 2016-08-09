@@ -22,6 +22,18 @@ router.get('/practiceItems/:itemId', function(req, res, next) {
     });
 });
 
+/* DELETE practice item by id */
+router.delete('/practiceItems/:itemId', function(req, res, next) {
+
+    // don't actually delete right now just in case
+    PracticeService.updateItem(req.params.itemId, 'markDelete', true, function(err) {
+        if(err) return next(err);
+
+        res.status(200).json({ message: 'Item successfully updated'});
+    });
+
+});
+
 /* PUT update to existing item */
 router.put('/practiceItems/:itemId/:field', function (req, res, next) {
 

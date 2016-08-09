@@ -13,6 +13,7 @@
         var service = {
             getPracticeItem: getPracticeItem,
             updateItem: updateItem,
+            deleteItem: deleteItem,
             saveSession: saveSession
         };
 
@@ -35,6 +36,14 @@
             }, function(err) {
                 $log.error('shits wrong yo: ' + err);
                 return $q.reject(err);
+            });
+        }
+
+        function deleteItem(id) {
+            return $http.delete('/practiceBud/api/v1/practiceItems/'+id).then(function(res) {
+            return res.data;
+            }, function(err) {
+                $log.error('shits wrong yo: ' + err);
             });
         }
 

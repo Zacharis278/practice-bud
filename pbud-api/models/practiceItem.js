@@ -10,7 +10,8 @@ var practiceItemSchema = new mongoose.Schema({
     mediaId: String,
     tabData: String,
     lyricData: String,
-    notes: String
+    notes: String,
+    markDelete: Boolean
 });
 
 module.exports = mongoose.model('PracticeItem', practiceItemSchema);

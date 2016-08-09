@@ -11,7 +11,7 @@ var PracticeService = {
 
 function getItemList(next) {
     // exclude actual tab/lyric/media data, just send back meta data
-    var query = PracticeItem.find({}, {
+    var query = PracticeItem.find({'markDelete':{$ne:true}}, {
         mediaId: 0,
         tabData: 0,
         lyricData: 0

@@ -5,6 +5,7 @@
             <div class="col-sm-6">
                 <practice-input class="inputGroup" label-text="'Title'" use-textarea="false" value="vm.title" save-callback="vm.saveTitle" required="true"></practice-input>
                 <practice-input class="inputGroup" label-text="'Artist'" use-textarea="false" value="vm.artist" save-callback="vm.saveArtist"></practice-input>
+                <practice-input class="inputGroup" label-text="'YouTube ID'" use-textarea="false" value="vm.mediaId" save-callback="vm.saveMediaId"></practice-input>
             </div>
             <div class="col-sm-6">
                 <div class="inputGroup"><label>Play Count</label><span>{{vm.playCount | number:0}}</span></div>
@@ -12,8 +13,9 @@
                     <label>Progress</label>
                     <span>{{vm.progress * 100 | number:0}}%</span>
                 </div>
+                <div class="input-container"><button class="remove-btn" ng-click="vm.deleteTrack()">PERMANENTLY DELETE THIS TRACK&nbsp<span class="fa fa-minus-circle"></span></button></div>
             </div>
-
+            <div class="clearfix"></div>
             <practice-input class="inputGroup" label-text="'Notes'" use-textarea="true" value="vm.notes" save-callback="vm.saveNotes"></practice-input>
         </div>
     </div>
