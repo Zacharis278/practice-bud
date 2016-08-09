@@ -1,7 +1,9 @@
 <div id="homeContent">
     <div id="bannerContent">
-        <div class="iconNavItem" ng-click="dashboardCtrl.newItemForm()"><i class="icon fa fa-plus"></i><div class="iconText">Add New</div></div>
+        <input id="searchInput" type="text" placeholder="search" ng-model="searchText">
         <div class="iconNavItem" ng-click="dashboardCtrl.openRandom()"><i class="icon fa fa-random"></i><div class="iconText">Random</div></div>
+        <div class="iconNavItem" ng-click=""><i class="icon fa fa-hourglass-start "></i><div class="iconText">Session</div></div>
+        <div class="iconNavItem" ng-click="dashboardCtrl.newItemForm()"><i class="icon fa fa-plus"></i><div class="iconText">Add New</div></div>
     </div>
 
     <table id="practiceGrid" class="table table-hover">
@@ -11,7 +13,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="item in dashboardCtrl.gridItems" ng-click="dashboardCtrl.openItem(item._id)">
+        <tr ng-repeat="item in dashboardCtrl.gridItems | filter:searchText" ng-click="dashboardCtrl.openItem(item._id)">
             <td>{{ item.title }}</td>
             <td>{{ item.artist }}</td>
             <td>{{ item.progress * 100 | number:0 }}%</td>

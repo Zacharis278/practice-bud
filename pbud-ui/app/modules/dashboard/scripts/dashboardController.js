@@ -29,13 +29,15 @@
         init();
 
         // private members
+        var allItems = [];
         var sortKey = 'title';
         var sortReverse = false;
 
 
         // definitions
         function init() {
-            dashboardService.getGridItems().then(function(gridList){
+            dashboardService.getGridItems().then(function(gridList) {
+                allItems = gridList;
                 vm.gridItems = gridList;
             });
         }
