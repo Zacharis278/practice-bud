@@ -1,3 +1,9 @@
+# database
+data/
+
+# UI symlink
+pbud-api/public
+
 # ignore compiled CSS
 pbud-ui/styles
 
@@ -6,6 +12,9 @@ pbud-ui/node_modules/
 
 # compiled css
 pbud-ui/app/styles/main.css
+
+# images I don't own
+pbud-ui/app/assets/devil-horns.svg
 
 # Below Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 

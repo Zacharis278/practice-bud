@@ -48,7 +48,7 @@
             itemId = $stateParams.itemId;
 
             vm.ratingsCategories = [
-                {id: 1, label: 'Play Through', value: 0, weight: 40},
+                {id: 1, label: 'Learn Parts + Transitions', value: 0, weight: 40},
                 {id: 2, label: 'Accuracy/Technique', value: 0, weight: 30},
                 {id: 3, label: 'Tempo', value: 0, weight: 10},
                 {id: 4, label: 'Memorization', value: 0, weight: 10},
